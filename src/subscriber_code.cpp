@@ -1,5 +1,6 @@
 #include "ros/ros.h"
 #include "std_msgs/String.h"
+#include "publisher_package/topic_name.h"
 
 #include <sstream>
 
@@ -52,7 +53,7 @@ int main(int argc, char **argv)
    * than we can send them, the number here specifies how many messages to
    * buffer up before throwing some away.
    */
-  ros::Subscriber sub = n.subscribe("publisher_topic", 1000, chatterCallback);
+  ros::Subscriber sub = n.subscribe(topic_name, 1000, chatterCallback);
 
   ros::spin();
 
